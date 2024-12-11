@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import { sequelize } from './database';
-import userRouter from '../Routers/userRouter';
+import restaurantsRouter from '../Routers/restaurantsRouter';
+
 
 
 const app = express();
@@ -12,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 //routers
-app.use('/users', userRouter);
+app.use('/restaurants', restaurantsRouter);
 
 
 sequelize.sync({ force: true })

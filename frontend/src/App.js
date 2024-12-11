@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 //components
-import Login from './components/login';
+import Restaurants from './components/Restaurants';
 
 
 
@@ -10,7 +10,7 @@ function App() {
 
     return (
         <div>
-                <Login/>
+                <Restaurants/>
         </div>
     );
 }
