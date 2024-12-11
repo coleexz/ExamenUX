@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  database:
+    image: postgres:13
+    container_name: uxDB
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: uxuser
+      POSTGRES_PASSWORD: uxunitec2024
+      POSTGRES_DB: uxDB
+    volumes:
+      - data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+    image: uxbackend
+    container_name: uxbackend
+    ports:
+      - "8000:8000"
+    environment:
+      - .env
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      - database
+
+volumes:
+  data: {}
