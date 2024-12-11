@@ -50,7 +50,7 @@ export const sequelize = process.env.DATABASE_URL
             unique: true,
         },
     }, {
-        tableName: 'restaurants',
+        tableName: 'Restaurants',
         timestamps: false,
     });
 
@@ -83,7 +83,7 @@ export const sequelize = process.env.DATABASE_URL
             allowNull: true,
         },
     }, {
-        tableName: 'restaurant_availability',
+        tableName: 'RestaurantAvailability',
         timestamps: false,
     });
 
@@ -113,5 +113,3 @@ export const sequelize = process.env.DATABASE_URL
             { id: 7, restaurant_id: 1, schedule_time: new Date('2021-06-20T08:00:00'), reserved: false, reserved_by: null },
         ]);
     }
-
-seedDatabase();
